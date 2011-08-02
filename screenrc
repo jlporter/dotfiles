@@ -1,0 +1,9 @@
+vbell off
+startup_message off
+
+hardstatus alwayslastline "%{=b kb}%-w%{=b wb}%20>%n %t%{=b kb}%+w"
+
+# Have C-a C-a send a C-a to terminal, which moves to beginning of line in bash.
+# By default, C-a C-a is ther other command, so rebind that to C-a o.
+escape ^A^A
+bind o other

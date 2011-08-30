@@ -66,25 +66,7 @@ if (($?prompt) && ($?tcsh) && ($?TERM)) then
     endif
 endif
 
-switch($HOSTNAME)
-case *.eecs.harvard.edu:
-    # Setup for cad tools
-    if (-f /home/cktcad/Tools2009/bin/cshrc.tools2009) then
-      source /home/cktcad/Tools2009/bin/cshrc.tools2009
-    endif
-    setenv CDS_INST_DIR /home/cktcad/Tools2006/Cadence/IUS54
-    setenv VCS_HOME /group/guyeon/cktcad/tools/synopsys/vcs-mx
-    setenv VCS_ARCH_OVERRIDE linux
-    set path = ( /group/guyeon/cktcad/tools/synopsys/syn/bin $VCS_HOME/bin $path )
-    # Set path for code sorcery arm compiler.
-    if (-e /group/brooks/cgonzo/sourcery/arm-2010q1/bin) then
-        set path = ( /group/brooks/cgonzo/sourcery/arm-2010q1/bin $path )
-    endif
-
-    # Autopilot setup
-    setenv XILINXD_LICENSE_FILE 2100@140.247.60.218
-    if (-e /group/guyeon/cktcad/tools/xilinx/autoesl/bin/) then
-        set path = ( /group/guyeon/cktcad/tools/xilinx/autoesl/bin/ $path )
-    endif
-breaksw
-endsw
+# Source local machine settings if available
+if ( -e ~/.cshrc_local ) then
+    source ~/.cshrc_local
+endif

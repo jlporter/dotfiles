@@ -70,3 +70,5 @@ endif
 if ( -e ~/.cshrc_local ) then
     source ~/.cshrc_local
 endif
+
+# vim: syntax=csh

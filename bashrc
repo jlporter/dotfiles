@@ -47,3 +47,5 @@ fi
 # Setup lesspipe
 ##########
 [ -x `type -P lesspipe` ] && eval "$(`type -P lesspipe`)"
+
+# vim: syntax=sh

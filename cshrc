@@ -20,7 +20,11 @@ if ($?prompt) then
     set listmax=30
     set matchbeep=nomatch
     set noclobber
-    if ( -f ~/.aliases ) source ~/.aliases
+
+##### Aliases #####
+    alias ls "ls --color=auto"
+    alias g "gvim --remote-tab-silent"
+    alias grep 'grep --color=auto'
 endif
 
 ##

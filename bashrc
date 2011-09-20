@@ -48,4 +48,12 @@ fi
 ##########
 [ -x `type -P lesspipe` ] && eval "$(`type -P lesspipe`)"
 
+##########
+# Setup local settings
+##########
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi
+
+
 # vim: syntax=sh

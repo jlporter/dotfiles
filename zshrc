@@ -31,3 +31,5 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 source $HOME/dotfiles/zsh-theme
 bindkey '^R' history-incremental-search-backward
+
+source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

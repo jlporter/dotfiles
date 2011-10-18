@@ -1,0 +1,2 @@
+To generate VCSCommand helptags open vim and run
+:helptags ~/dotfiles/vim/bundle/vcscommand/doc

@@ -33,3 +33,7 @@ source $HOME/dotfiles/zsh-theme
 bindkey '^R' history-incremental-search-backward
 
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+if [ -f ~/.zshrc_local ]; then
+    . ~/.zshrc_local
+fi

@@ -32,8 +32,10 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/dotfiles/zsh-theme
 bindkey '^R' history-incremental-search-backward
 
-source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias g="gvim --remote-tab-silent"
 
 if [ -f ~/.zshrc_local ]; then
     . ~/.zshrc_local
 fi
+
+source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

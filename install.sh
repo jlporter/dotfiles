@@ -5,6 +5,9 @@ git pull
 git submodule init
 git submodule update
 
+# Uncomment to update submodules
+#git submodule foreach git pull origin master
+
 # Create a backup directory
 backup_dir=backup-$(date +"%Y-%m-%d_%Hh%Mm%Ss")
 mkdir -p $backup_dir;

@@ -80,3 +80,10 @@ function! ToggleVExplorer()
   endif
 endfunction
 map <silent> <C-E> :call ToggleVExplorer()<CR>
+
+set list
+set listchars=tab:▸\ ,extends:▹,precedes:◃
+" Shortcut to toggle 'set list'
+" nmap <leader>l :set list!<CR>
+" Some alternate list chars
+"set listchars=tab:▸\ ,eol:¬,trail:◦

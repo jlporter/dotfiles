@@ -32,6 +32,8 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/dotfiles/zsh-theme
 bindkey '^R' history-incremental-search-backward
 
+autoload zmv
+
 alias g="gvim --remote-tab-silent"
 
 if [ -f ~/.zshrc_local ]; then

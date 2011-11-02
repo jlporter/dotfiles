@@ -96,5 +96,5 @@ function steeef_precmd {
 add-zsh-hook precmd steeef_precmd
 
 PROMPT=$'
-%{$orange%}%m%{$reset_color%} %{$limegreen%}%~%{$reset_color%} $vcs_info_msg_0_
-$(virtualenv_info)%{$hotpink%}♥%{$reset_color%} '
+%{$fg[blue]%}%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%} $vcs_info_msg_0_
+$(virtualenv_info)%{$fg[red]%}♥%{$reset_color%} '

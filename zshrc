@@ -36,6 +36,8 @@ autoload zmv
 
 alias g="gvim --remote-tab-silent"
 
+export EDITOR=vim
+
 if [ -f ~/.zshrc_local ]; then
     . ~/.zshrc_local
 fi

@@ -12,7 +12,7 @@ git submodule update
 backup_dir=backup-$(date +"%Y-%m-%d_%Hh%Mm%Ss")
 mkdir -p $backup_dir;
 
-for f in bashrc cshrc gvimrc screenrc tmux.conf vim vimrc zshrc; do
+for f in bashrc cshrc gitconfig gvimrc screenrc tmux.conf vim vimrc zshrc; do
     new=$(pwd)/$f
     old=~/.$f
 

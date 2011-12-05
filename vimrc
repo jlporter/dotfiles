@@ -53,7 +53,11 @@ augroup filetype
 augroup END
 
 " Enable spell check and line breaks for tex files
-autocmd FileType tex,plaintex set spell formatoptions=1 lbr
+autocmd FileType tex,plaintex set spell showbreak=+++\
+
+if exists('+colorcolumn')
+    autocmd FileType python set colorcolumn=80
+endif
 
 let b:verilog_indent_modules = 1
 

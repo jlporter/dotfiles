@@ -43,20 +43,11 @@ set guicursor+=a:blinkon0
 " Recognize cuda files
 autocmd BufNewFile,BufRead *.cu setfiletype cuda
 
-" Recognize llvm files
-augroup filetype
-    au! BufRead,BufNewFile *.ll     set filetype=llvm
-augroup END
-
-augroup filetype
-    au! BufRead,BufNewFile *.td     set filetype=tablegen
-augroup END
-
 " Enable spell check and line breaks for tex files
-autocmd FileType tex,plaintex set spell showbreak=+++\
+autocmd FileType tex,plaintex setlocal spell showbreak=+++\
 
 if exists('+colorcolumn')
-    autocmd FileType python set colorcolumn=80
+    autocmd FileType python setlocal colorcolumn=80
 endif
 
 let b:verilog_indent_modules = 1

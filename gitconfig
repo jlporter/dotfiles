@@ -1,3 +1,13 @@
 [user]
 	name = Jud Porter
 	email = judson.porter@gmail.com
+[diff]
+	tool = gvimdiff
+    prompt = false
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+[alias]
+	co = checkout
+	ci = commit
+	br = branch

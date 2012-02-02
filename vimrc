@@ -38,6 +38,9 @@ set statusline+=%*
 
 " Automatically open syntastic error window when errors are detected
 let g:syntastic_auto_loc_list=1
+" Check cpp header files
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler_options = ' -std=gnu++0x'
 
 "Folding - use spacebar to open and close folds, fold method may not be
 "correct here

@@ -31,6 +31,14 @@ endif
 " Turn off blinking cursor
 set guicursor+=a:blinkon0
 
+" Use statusline as suggested by syntastic documentation
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" Automatically open syntastic error window when errors are detected
+let g:syntastic_auto_loc_list=1
+
 "Folding - use spacebar to open and close folds, fold method may not be
 "correct here
 "set foldmethod=indent

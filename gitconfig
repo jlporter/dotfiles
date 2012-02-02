@@ -5,7 +5,7 @@
 	tool = gvimdiff
     prompt = false
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/dotfiles/gitignore
 	autocrlf = input
 [alias]
 	co = checkout

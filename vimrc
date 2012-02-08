@@ -42,11 +42,10 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler_options = ' -std=gnu++0x'
 
-"Folding - use spacebar to open and close folds, fold method may not be
-"correct here
-"set foldmethod=indent
-"nnoremap <space> za
-"vnoremap <space> zf
+" Folding
+set foldmethod=syntax
+" Start with all folds open
+set foldlevelstart=99
 
 " Highlight line greater than 79 characters for c files
 " :au BufWinEnter *.c,*.cpp,*.h,*.py let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)

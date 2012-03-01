@@ -10,8 +10,6 @@ set ruler
 set ignorecase
 set smartcase
 
-set clipboard=unnamed
-
 " Settings for tabs
 set expandtab
 set tabstop=4

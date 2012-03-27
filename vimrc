@@ -62,8 +62,8 @@ let g:tex_flavor = "latex"
 " Toggle NERDTree with Ctrl-E
 map <silent> <C-E> :NERDTreeToggle<CR>
 
-"set list
-"set listchars=tab:▸\ ,extends:▹,precedes:◃
+set list
+set listchars=tab:▸\ ,extends:▹,precedes:◃
 " Shortcut to toggle 'set list'
 " nmap <leader>l :set list!<CR>
 " Some alternate list chars

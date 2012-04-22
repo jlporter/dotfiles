@@ -65,6 +65,9 @@ let g:tex_flavor = "latex"
 " Toggle NERDTree with Ctrl-E
 map <silent> <C-E> :NERDTreeToggle<CR>
 
+" VCSCommand overlaps with NERDCommenter, so use <Leader>d for VCSCommand
+let VCSCommandMapPrefix = 'd'
+
 set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃
 " Shortcut to toggle 'set list'

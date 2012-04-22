@@ -54,6 +54,7 @@ autocmd FileType tex,plaintex setlocal spell showbreak=+++\
 
 if exists('+colorcolumn')
     autocmd FileType python setlocal colorcolumn=80
+    autocmd FileType c,cpp,javascript setlocal colorcolumn=81
 endif
 
 let b:verilog_indent_modules = 1

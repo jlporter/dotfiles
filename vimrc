@@ -9,6 +9,8 @@ set incsearch
 set ruler
 set ignorecase
 set smartcase
+set relativenumber
+set showmatch
 
 " Settings for tabs
 set expandtab

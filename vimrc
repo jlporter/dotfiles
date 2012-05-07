@@ -12,6 +12,9 @@ set smartcase
 set relativenumber
 set showmatch
 
+" Keep cursor in middle of screen
+set scrolloff=999
+
 " Settings for tabs
 set expandtab
 set tabstop=4
@@ -54,7 +57,7 @@ autocmd FileType tex,plaintex setlocal spell showbreak=+++\
 
 if exists('+colorcolumn')
     autocmd FileType python setlocal colorcolumn=80
-    autocmd FileType c,cpp,javascript setlocal colorcolumn=81
+    autocmd FileType c,cpp,javascript,verilog setlocal colorcolumn=81
 endif
 
 let b:verilog_indent_modules = 1
@@ -64,6 +67,9 @@ let g:tex_flavor = "latex"
 
 " Toggle NERDTree with Ctrl-E
 map <silent> <C-E> :NERDTreeToggle<CR>
+
+" Add space around comment delimiter
+let NERDSpaceDelims = 1
 
 " VCSCommand overlaps with NERDCommenter, so use <Leader>d for VCSCommand
 let VCSCommandMapPrefix = '<Leader>d'

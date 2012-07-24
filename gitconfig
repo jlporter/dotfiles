@@ -1,6 +1,3 @@
-[diff]
-	tool = gvimdiff
-    prompt = false
 [core]
 	excludesfile = ~/dotfiles/gitignore
 	autocrlf = input
@@ -8,3 +5,5 @@
 	co = checkout
 	ci = commit
 	br = branch
+[color]
+	ui = true

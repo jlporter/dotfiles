@@ -81,7 +81,7 @@ add-zsh-hook chpwd steeef_chpwd
 function steeef_precmd {
     if [[ -n "$PR_GIT_UPDATE" ]] ; then
         # check for untracked files or updated submodules, since vcs_info doesn't
-        if [[ ! -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+        if git ls-files --other --exclude-standard --directory 2> /dev/null | grep -q "."; then
             PR_GIT_UPDATE=1
             FMT_BRANCH="(%{$turquoise%}%b%u%c%{$hotpink%}●${PR_RST})"
         else
@@ -96,5 +96,5 @@ function steeef_precmd {
 add-zsh-hook precmd steeef_precmd
 
 PROMPT=$'
-%{$fg[cyan]%}%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%} $vcs_info_msg_0_
+%{$fg[yellow]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} %{$limegreen%}%~%{$reset_color%} $vcs_info_msg_0_
 $(virtualenv_info)%{$fg[red]%}♥%{$reset_color%} '

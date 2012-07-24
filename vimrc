@@ -4,30 +4,33 @@ set rtp+=~/dotfiles/vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 syntax on
+if filereadable('/usr/share/vim/google/google.vim')
+    source /usr/share/vim/google/google.vim
+endif
 
 set hlsearch
 set incsearch
 set ruler
 set ignorecase
 set smartcase
-set relativenumber
+set number
 set showmatch
 
-" Keep cursor in middle of screen
-set scrolloff=999
+set textwidth=80
+set colorcolumn=+1
 
-" Settings for tabs
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+" Search for ctags file up the directory tree
+set tags=./tags;/
+
+" Keep cursor off bottom of screen
+set scrolloff=3
 
 set backspace=indent,eol,start
 
@@ -42,36 +45,10 @@ endif
 " Turn off blinking cursor
 set guicursor+=a:blinkon0
 
-" Automatically open syntastic error window when errors are detected
-let g:syntastic_auto_loc_list=1
-" Check cpp header files
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_compiler_options = ' -std=gnu++0x'
-let g:syntastic_javascript_checker='jshint'
-
 " Folding
 set foldmethod=syntax
 " Start with all folds open
 set foldlevelstart=99
-
-" Highlight line greater than 79 characters for c files
-" :au BufWinEnter *.c,*.cpp,*.h,*.py let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
-
-" Recognize cuda files
-autocmd BufNewFile,BufRead *.cu setfiletype cuda
-
-" Enable spell check and line breaks for tex files
-autocmd FileType tex,plaintex setlocal spell showbreak=+++\
-
-if exists('+colorcolumn')
-    autocmd FileType python setlocal colorcolumn=80
-    autocmd FileType c,cpp,javascript,verilog setlocal colorcolumn=81
-endif
-
-let b:verilog_indent_modules = 1
-
-" Make sure filetype always gets set to tex instead of plaintex
-let g:tex_flavor = "latex"
 
 " Toggle NERDTree with Ctrl-E
 map <silent> <C-E> :NERDTreeToggle<CR>
@@ -79,8 +56,13 @@ map <silent> <C-E> :NERDTreeToggle<CR>
 " Add space around comment delimiter
 let NERDSpaceDelims = 1
 
-" VCSCommand overlaps with NERDCommenter, so use <Leader>d for VCSCommand
-let VCSCommandMapPrefix = '<Leader>d'
+" Setup ctrlp to ignore source control related directories
+let g:ctrlp_custom_ignore = '\.git$\|review$'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|review$'
+
+" Only show cursorline in current window
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
 
 set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃

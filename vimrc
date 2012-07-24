@@ -1,5 +1,13 @@
-source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+set nocompatible
+filetype off
+set rtp+=~/dotfiles/vim/bundle/vundle
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 syntax on

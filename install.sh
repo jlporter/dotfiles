@@ -24,3 +24,5 @@ for f in gitconfig gvimrc tmux.conf vim vimrc zshrc; do
     # Create the symlink
     ln -sf $new $old;
 done;
+
+vim +BundleInstall +qall

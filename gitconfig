@@ -7,3 +7,5 @@
 	br = branch
 [color]
 	ui = true
+[merge]
+	tool = gvimdiff

@@ -8,9 +8,12 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized
 if filereadable('/usr/share/vim/google/google.vim')
     source /usr/share/vim/google/google.vim
 endif

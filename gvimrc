@@ -1,4 +1,3 @@
-color desert
 if has("gui_gtk2")
     set gfn=Bitstream\ Vera\ Sans\ Mono\ 11
 elseif has("gui_macvim")

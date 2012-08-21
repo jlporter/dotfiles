@@ -12,8 +12,6 @@ Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 syntax enable
-set background=dark
-colorscheme solarized
 if filereadable('/usr/share/vim/google/google.vim')
     source /usr/share/vim/google/google.vim
 endif

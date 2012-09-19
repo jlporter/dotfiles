@@ -13,6 +13,11 @@ filetype plugin indent on
 syntax enable
 if filereadable('/usr/share/vim/google/google.vim')
     source /usr/share/vim/google/google.vim
+else
+    set expandtab
+    set smartindent
+    set tabstop=2
+    set shiftwidth=2
 endif
 
 set hlsearch

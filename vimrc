@@ -29,7 +29,7 @@ set number
 set showmatch
 
 set textwidth=80
-set colorcolumn=+1
+autocmd Filetype cpp,py setlocal colorcolumn=+1
 
 " Search for ctags file up the directory tree
 set tags=./tags;/

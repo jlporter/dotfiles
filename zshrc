@@ -42,3 +42,6 @@ export EDITOR=vim
 if [ -f ~/.zshrc_local ]; then
     . ~/.zshrc_local
 fi
+
+# Unset correctall to fix 'sudo vim' correcting to 'sudo .vim'
+unsetopt correctall

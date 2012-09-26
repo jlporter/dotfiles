@@ -13,6 +13,11 @@ filetype plugin indent on
 syntax enable
 if filereadable('/usr/share/vim/google/google.vim')
     source /usr/share/vim/google/google.vim
+else
+    set expandtab
+    set smartindent
+    set tabstop=2
+    set shiftwidth=2
 endif
 
 set hlsearch
@@ -24,7 +29,7 @@ set number
 set showmatch
 
 set textwidth=80
-set colorcolumn=+1
+autocmd Filetype cpp,py setlocal colorcolumn=+1
 
 " Search for ctags file up the directory tree
 set tags=./tags;/

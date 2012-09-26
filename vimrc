@@ -11,13 +11,15 @@ Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 syntax enable
-if filereadable('/usr/share/vim/google/google.vim')
-    source /usr/share/vim/google/google.vim
+
+if filereadable('/home/jud/.google.vim')
+  source /home/jud/.google.vim
 else
-    set expandtab
-    set smartindent
-    set tabstop=2
-    set shiftwidth=2
+  set expandtab
+  set smartindent
+  set tabstop=2
+  set shiftwidth=2
+  set autochdir
 endif
 
 set hlsearch
@@ -43,9 +45,9 @@ set backspace=indent,eol,start
 set wildmode=longest,list,full
 set wildmenu
 
-if exists("+autochdir")
-    set autochdir
-endif
+"if exists("+autochdir")
+"    set autochdir
+"endif
 
 " Turn off blinking cursor
 set guicursor+=a:blinkon0

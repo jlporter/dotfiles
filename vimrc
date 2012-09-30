@@ -1,6 +1,7 @@
 set nocompatible
 filetype off
 set rtp+=~/dotfiles/vim/bundle/vundle
+
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
@@ -8,6 +9,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
+
+if isdirectory('/usr/share/go/misc/vim/')
+  set rtp+=/usr/share/go/misc/vim
+endif
 
 filetype plugin indent on
 syntax enable

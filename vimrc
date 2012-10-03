@@ -80,8 +80,8 @@ let g:ctrlp_switch_buffer = 'et'
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
-" set list
-" set listchars=tab:▸\ ,extends:▹,precedes:◃
+set list
+set listchars=extends:▹,precedes:◃
 " Shortcut to toggle 'set list'
 " nmap <leader>l :set list!<CR>
 " Some alternate list chars

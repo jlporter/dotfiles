@@ -36,6 +36,7 @@ bindkey '^R' history-incremental-search-backward
 autoload zmv
 
 alias g="gvim --remote-tab-silent"
+alias make="make --jobs --max-load `grep processor /proc/cpuinfo | wc -l`"
 
 export EDITOR=vim
 

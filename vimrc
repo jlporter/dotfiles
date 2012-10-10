@@ -81,7 +81,7 @@ autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 
 set list
-set listchars=extends:▹,precedes:◃
+set listchars=tab:▸\ ,extends:▹,precedes:◃
 " Shortcut to toggle 'set list'
 " nmap <leader>l :set list!<CR>
 " Some alternate list chars

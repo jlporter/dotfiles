@@ -36,7 +36,7 @@ set number
 set showmatch
 
 set textwidth=80
-autocmd Filetype cpp,javascript,python setlocal colorcolumn=+1
+autocmd Filetype cpp,html,javascript,python setlocal colorcolumn=+1
 
 " Search for ctags file up the directory tree
 set tags=./tags;/

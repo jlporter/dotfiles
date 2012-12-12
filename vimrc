@@ -19,6 +19,8 @@ syntax enable
 
 if filereadable('/home/jud/.google.vim')
   source /home/jud/.google.vim
+  " Don't auto-wrap text
+  set formatoptions-=t
 else
   set expandtab
   set smartindent
@@ -36,7 +38,7 @@ set number
 set showmatch
 
 set textwidth=80
-autocmd Filetype cpp,html,javascript,python,sh setlocal colorcolumn=+1
+set colorcolumn=+1
 
 " Search for ctags file up the directory tree
 set tags=./tags;/

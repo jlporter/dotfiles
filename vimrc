@@ -78,10 +78,6 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|review$'
 " t - jump when <c-t> is pressed, but only to windows in another tab.
 let g:ctrlp_switch_buffer = 'et'
 
-" Only show cursorline in current window
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-
 set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃
 " Shortcut to toggle 'set list'

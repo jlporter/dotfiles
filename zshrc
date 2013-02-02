@@ -36,12 +36,14 @@ bindkey '^R' history-incremental-search-backward
 autoload zmv
 
 alias g="gvim --remote-tab-silent"
-alias make="make --jobs --max-load `grep processor /proc/cpuinfo | wc -l`"
+if [ -f /proc/cpuinfo ]; then
+  alias make="make --jobs --max-load `grep processor /proc/cpuinfo | wc -l`"
+fi
 
 export EDITOR=vim
 
 if [ -f ~/.zshrc_local ]; then
-    . ~/.zshrc_local
+  . ~/.zshrc_local
 fi
 
 # Unset correctall to fix 'sudo vim' correcting to 'sudo .vim'

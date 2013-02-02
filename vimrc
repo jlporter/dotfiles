@@ -19,6 +19,8 @@ syntax enable
 
 if filereadable('/home/jud/.google.vim')
   source /home/jud/.google.vim
+  " Don't auto-wrap text
+  set formatoptions-=t
 else
   set expandtab
   set smartindent
@@ -36,7 +38,7 @@ set number
 set showmatch
 
 set textwidth=80
-autocmd Filetype cpp,javascript,python setlocal colorcolumn=+1
+set colorcolumn=+1
 
 " Search for ctags file up the directory tree
 set tags=./tags;/
@@ -75,10 +77,6 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|review$'
 " e - Jump when <cr> is pressed, but only to windows in the current tab.
 " t - jump when <c-t> is pressed, but only to windows in another tab.
 let g:ctrlp_switch_buffer = 'et'
-
-" Only show cursorline in current window
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
 
 set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃

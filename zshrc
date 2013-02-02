@@ -29,7 +29,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-bindkey -v #vi mode
 source $HOME/dotfiles/zsh-theme
 bindkey '^R' history-incremental-search-backward
 

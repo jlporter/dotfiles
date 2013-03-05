@@ -5,9 +5,11 @@ set rtp+=~/dotfiles/vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 
 if isdirectory('/usr/share/go/misc/vim/')

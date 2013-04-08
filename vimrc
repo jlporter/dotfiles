@@ -5,6 +5,7 @@ set rtp+=~/dotfiles/vim/bundle/vundle
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+Bundle 'SirVer/ultisnips'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -66,6 +67,9 @@ set foldmethod=syntax
 " Start with all folds open
 set foldlevelstart=99
 
+" Don't insert 2 spaces after a '.' when joining or reformatting a paragraph.
+set nojoinspaces
+
 " Toggle NERDTree with Ctrl-E
 map <silent> <C-E> :NERDTreeToggle<CR>
 
@@ -86,3 +90,8 @@ set listchars=tab:▸\ ,extends:▹,precedes:◃
 " nmap <leader>l :set list!<CR>
 " Some alternate list chars
 "set listchars=tab:▸\ ,eol:¬,trail:◦
+
+" Don't ask about .ycm_extra_conf.py
+let g:ycm_confirm_extra_conf = 0
+
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>

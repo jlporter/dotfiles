@@ -9,3 +9,5 @@
 	ui = true
 [merge]
 	tool = gvimdiff
+[push]
+	default = simple

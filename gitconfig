@@ -9,5 +9,7 @@
 	ui = true
 [merge]
 	tool = gvimdiff
+[credential]
+	helper = cache
 [push]
 	default = simple

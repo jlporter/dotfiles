@@ -6,7 +6,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'SirVer/ultisnips'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -22,8 +21,6 @@ syntax enable
 
 if filereadable('/home/jud/.google.vim')
   source /home/jud/.google.vim
-  " Don't auto-wrap text
-  set formatoptions-=t
 else
   set expandtab
   set smartindent
@@ -86,12 +83,3 @@ let g:ctrlp_switch_buffer = 'et'
 
 set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃
-" Shortcut to toggle 'set list'
-" nmap <leader>l :set list!<CR>
-" Some alternate list chars
-"set listchars=tab:▸\ ,eol:¬,trail:◦
-
-" Don't ask about .ycm_extra_conf.py
-let g:ycm_confirm_extra_conf = 0
-
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>

@@ -13,26 +13,10 @@ function virtualenv_info {
 PR_GIT_UPDATE=1
 
 setopt prompt_subst
-autoload colors
-colors
+autoload -U colors && colors
 
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
-
-#use extended color pallete if available
-if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
-    turquoise="%F{81}"
-    orange="%F{166}"
-    purple="%F{135}"
-    hotpink="%F{161}"
-    limegreen="%F{118}"
-else
-    turquoise="$fg[cyan]"
-    orange="$fg[yellow]"
-    purple="$fg[magenta]"
-    hotpink="$fg[red]"
-    limegreen="$fg[green]"
-fi
 
 # enable VCS systems you use
 zstyle ':vcs_info:*' enable git svn
@@ -49,10 +33,10 @@ zstyle ':vcs_info:*:prompt:*' check-for-changes true
 # %R - repository path
 # %S - path in the repository
 PR_RST="%{${reset_color}%}"
-FMT_BRANCH="(%{$turquoise%}%b%u%c${PR_RST})"
-FMT_ACTION="(%{$limegreen%}%a${PR_RST})"
-FMT_UNSTAGED="%{$orange%}●"
-FMT_STAGED="%{$limegreen%}●"
+FMT_BRANCH="(%b%u%c${PR_RST})"
+FMT_ACTION="(%{$fg[green]%}%a${PR_RST})"
+FMT_UNSTAGED="%{$fg[yellow]%}●"
+FMT_STAGED="%{$fg[green]%}●"
 
 zstyle ':vcs_info:*:prompt:*' unstagedstr   "${FMT_UNSTAGED}"
 zstyle ':vcs_info:*:prompt:*' stagedstr     "${FMT_STAGED}"
@@ -83,9 +67,9 @@ function steeef_precmd {
         # check for untracked files or updated submodules, since vcs_info doesn't
         if git ls-files --other --exclude-standard --directory 2> /dev/null | grep -q "."; then
             PR_GIT_UPDATE=1
-            FMT_BRANCH="(%{$turquoise%}%b%u%c%{$hotpink%}●${PR_RST})"
+            FMT_BRANCH="(%b%u%c%{$fg[red]%}●${PR_RST})"
         else
-            FMT_BRANCH="(%{$turquoise%}%b%u%c${PR_RST})"
+            FMT_BRANCH="(%b%u%c${PR_RST})"
         fi
         zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 
@@ -96,5 +80,5 @@ function steeef_precmd {
 add-zsh-hook precmd steeef_precmd
 
 PROMPT=$'
-%{$fg[yellow]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} %{$limegreen%}%~%{$reset_color%} $vcs_info_msg_0_
+%n@%m%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%} $vcs_info_msg_0_
 $(virtualenv_info)%{$fg[red]%}♥%{$reset_color%} '

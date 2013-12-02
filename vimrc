@@ -11,6 +11,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
+Bundle 'xolox/vim-easytags'
+Bundle 'xolox/vim-misc'
 
 if isdirectory('/usr/share/go/misc/vim/')
   set rtp+=/usr/share/go/misc/vim
@@ -80,6 +82,9 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|review$'
 " e - Jump when <cr> is pressed, but only to windows in the current tab.
 " t - jump when <c-t> is pressed, but only to windows in another tab.
 let g:ctrlp_switch_buffer = 'et'
+
+" Disable annoying warning from easytags about updatetime.
+let g:easytags_updatetime_warn = 0
 
 set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃

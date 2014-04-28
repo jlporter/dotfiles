@@ -6,12 +6,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'SirVer/ultisnips'
+Bundle 'git://repo.or.cz/vcscommand'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
-Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 
 if isdirectory('/usr/share/go/misc/vim/')
@@ -88,3 +88,13 @@ let g:easytags_updatetime_warn = 0
 
 set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃
+
+" Whitelist of filetypes to enable ycm for.
+let g:ycm_filetype_whitelist = {
+    \ 'cpp' : 1,
+    \ 'py' : 1
+    \}
+" Autoclose the preview window that YouCompleteMe generates after a completion.
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+let g:VCSCommandDiff = 'vertical'

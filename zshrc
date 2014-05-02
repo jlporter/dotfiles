@@ -1,49 +1,23 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/dotfiles/oh-my-zsh
+setopt prompt_subst
+autoload -U colors && colors
+PROMPT=$'
+%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %{$fg[green]%}%~%{$reset_color%}
+%{$fg[red]%}♥%{$reset_color%} '
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="steeef"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-source $HOME/dotfiles/zsh-theme
-bindkey '^R' history-incremental-search-backward
+# Use emacs key bindings.
+bindkey -e
 
 autoload zmv
 
+# Setup aliases.
+alias ls='ls --color=auto'
 alias g="gvim --remote-tab-silent"
 if [ -f /proc/cpuinfo ]; then
   alias make="make --jobs --max-load `grep processor /proc/cpuinfo | wc -l`"
 fi
 
-export EDITOR=vim
+export EDITOR=gvim
 
 if [ -f ~/.zshrc_local ]; then
   . ~/.zshrc_local
 fi
-
-# Unset correctall to fix 'sudo vim' correcting to 'sudo .vim'
-unsetopt correctall

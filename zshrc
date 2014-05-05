@@ -7,6 +7,19 @@ PROMPT=$'
 # Use emacs key bindings.
 bindkey -e
 
+# Save history.
+HISTFILE=$HOME/.zsh_history
+# Save 100000 history entires, because disk space is cheap.
+SAVEHIST=100000
+HISTSIZE=100000
+# Append new history to the file, rather than replacing, to get saner behavior
+# when using multiple shells.
+setopt inc_append_history
+# Don't add command lines to history if they are duplicates of previous events.
+setopt hist_ignore_dups
+# Add some extra timestamps to the history file.
+setopt extended_history
+
 autoload zmv
 
 # Setup aliases.

@@ -29,7 +29,7 @@ if [ -f /proc/cpuinfo ]; then
   alias make="make --jobs --max-load `grep processor /proc/cpuinfo | wc -l`"
 fi
 
-export EDITOR=gvim
+export EDITOR=vim
 
 if [ -f ~/.zshrc_local ]; then
   . ~/.zshrc_local

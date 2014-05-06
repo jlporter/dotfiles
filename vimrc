@@ -21,8 +21,8 @@ endif
 filetype plugin indent on
 syntax enable
 
-if filereadable('/home/jud/.google.vim')
-  source /home/jud/.google.vim
+if filereadable($HOME.'/.vimrc_local')
+  source $HOME/.vimrc_local
 else
   set expandtab
   set smartindent

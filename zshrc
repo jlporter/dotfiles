@@ -1,3 +1,7 @@
+zstyle :compinstall filename '/usr/local/google/home/jud/.zshrc'
+autoload -Uz compinit
+compinit
+
 setopt prompt_subst
 autoload -U colors && colors
 PROMPT=$'
@@ -34,3 +38,4 @@ export EDITOR=vim
 if [ -f ~/.zshrc_local ]; then
   . ~/.zshrc_local
 fi
+

@@ -1,9 +1,16 @@
-zstyle :compinstall filename '/usr/local/google/home/jud/.zshrc'
-autoload -Uz compinit
-compinit
+# Configure completion.
+# zstyle :compinstall filename '/usr/local/google/home/jud/.zshrc'
+# autoload -Uz compinit
+# compinit
 
 setopt prompt_subst
 autoload -U colors && colors
+
+# Use 256 color terms. This has to be specified for tmux to use 256 colors.
+case "$TERM" in
+  xterm*) TERM=xterm-256color
+esac
+
 PROMPT=$'
 %{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %{$fg[green]%}%~%{$reset_color%}
 %{$fg[red]%}♥%{$reset_color%} '
@@ -38,4 +45,3 @@ export EDITOR=vim
 if [ -f ~/.zshrc_local ]; then
   . ~/.zshrc_local
 fi
-

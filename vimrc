@@ -1,18 +1,19 @@
 set nocompatible
 filetype off
-set rtp+=~/dotfiles/vim/bundle/vundle
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 
-call vundle#rc()
-Bundle 'gmarik/vundle'
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'SirVer/ultisnips'
-Bundle 'git://repo.or.cz/vcscommand'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'xolox/vim-misc'
+Plugin 'SirVer/ultisnips'
+Plugin 'git://repo.or.cz/vcscommand'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'xolox/vim-misc'
+call vundle#end()
 
 if isdirectory('/usr/share/go/misc/vim/')
   set rtp+=/usr/share/go/misc/vim

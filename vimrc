@@ -31,6 +31,8 @@ else
   set autochdir
 endif
 
+let mapleader = ","
+
 set hlsearch
 set incsearch
 set ruler
@@ -41,6 +43,9 @@ set showmatch
 
 set textwidth=80
 set colorcolumn=+1
+
+" Set default window size.
+set lines=100 columns=86
 
 " Search for ctags file up the directory tree
 set tags=./tags;/
@@ -90,10 +95,11 @@ set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃
 
 " Whitelist of filetypes to enable ycm for.
-let g:ycm_filetype_whitelist = {
-    \ 'cpp' : 1,
-    \ 'py' : 1
-    \}
+" let g:ycm_filetype_whitelist = {
+"     \ 'cpp' : 1,
+"     \ 'js' : 1,
+"     \ 'py' : 1
+"     \}
 " Autoclose the preview window that YouCompleteMe generates after a completion.
 let g:ycm_autoclose_preview_window_after_completion = 1
 

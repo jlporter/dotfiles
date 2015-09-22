@@ -96,11 +96,11 @@ set list
 set listchars=tab:▸\ ,extends:▹,precedes:◃
 
 " Whitelist of filetypes to enable ycm for.
-" let g:ycm_filetype_whitelist = {
-"     \ 'cpp' : 1,
-"     \ 'js' : 1,
-"     \ 'py' : 1
-"     \}
+let g:ycm_filetype_whitelist = {
+    \ 'c' : 1,
+    \ 'cpp' : 1,
+    \ 'py' : 1
+    \}
 " Autoclose the preview window that YouCompleteMe generates after a completion.
 let g:ycm_autoclose_preview_window_after_completion = 1
 

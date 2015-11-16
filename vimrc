@@ -32,6 +32,8 @@ else
   set autochdir
 endif
 
+colorscheme desert
+
 let mapleader = ","
 
 set hlsearch

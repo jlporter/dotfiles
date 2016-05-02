@@ -34,7 +34,11 @@ setopt extended_history
 autoload zmv
 
 # Setup aliases.
-alias ls='ls --color=auto'
+if [[ `uname` = "Darwin" ]]; then
+  alias ls='ls -G'
+else
+  alias ls='ls --color=auto'
+fi
 alias g="gvim --remote-tab-silent"
 if [ -f /proc/cpuinfo ]; then
   alias make="make --jobs --max-load `grep processor /proc/cpuinfo | wc -l`"

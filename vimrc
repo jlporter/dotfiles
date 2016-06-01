@@ -5,7 +5,6 @@ set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'SirVer/ultisnips'
 Plugin 'git://repo.or.cz/vcscommand'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'

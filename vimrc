@@ -11,7 +11,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'xolox/vim-misc'
 call vundle#end()
 
 if isdirectory('/usr/share/go/misc/vim/')

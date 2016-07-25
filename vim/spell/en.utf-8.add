@@ -6,3 +6,8 @@ NOLINT
 GoogleString
 google3
 StringPiece
+eval
+evals
+TIMESTAMP
+Timestamp
+proto

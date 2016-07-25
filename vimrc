@@ -22,14 +22,13 @@ endif
 filetype plugin indent on
 syntax enable
 
+set expandtab
+set smartindent
+set tabstop=2
+set shiftwidth=2
+
 if filereadable($HOME.'/.vimrc_local')
   source $HOME/.vimrc_local
-else
-  set expandtab
-  set smartindent
-  set tabstop=2
-  set shiftwidth=2
-  set autochdir
 endif
 
 colorscheme desert
@@ -47,6 +46,9 @@ set showmatch
 set textwidth=80
 set colorcolumn=+1
 
+" Don't continue comment when hitting o.
+set formatoptions-=o
+
 " Set default window size.
 set lines=100 columns=86
 
@@ -62,10 +64,6 @@ set backspace=indent,eol,start
 set wildmode=longest,list,full
 set wildmenu
 
-"if exists("+autochdir")
-"    set autochdir
-"endif
-
 " Turn off blinking cursor
 set guicursor+=a:blinkon0
 
@@ -76,6 +74,10 @@ set foldlevelstart=99
 
 " Don't insert 2 spaces after a '.' when joining or reformatting a paragraph.
 set nojoinspaces
+
+" When a file has been detected to have been changed outside of Vim and it has
+" not been changed inside of Vim, automatically read it again.
+set autoread
 
 " Toggle NERDTree with Ctrl-E
 map <silent> <C-E> :NERDTreeToggle<CR>
@@ -94,8 +96,9 @@ let g:ctrlp_switch_buffer = 'et'
 " Disable annoying warning from easytags about updatetime.
 let g:easytags_updatetime_warn = 0
 
-set list
-set listchars=tab:▸\ ,extends:▹,precedes:◃
+" Don't highlight trailing whitespace in go, because it highlights the indent on
+" new lines which drives me crazy.
+let g:go_highlight_trailing_whitespace_error = 0
 
 " Whitelist of filetypes to enable ycm for.
 let g:ycm_filetype_whitelist = {
@@ -107,3 +110,4 @@ let g:ycm_filetype_whitelist = {
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 let g:VCSCommandDiff = 'vertical'
+

@@ -1,8 +1,3 @@
-# Configure completion.
-# zstyle :compinstall filename '/usr/local/google/home/jud/.zshrc'
-# autoload -Uz compinit
-# compinit
-
 setopt prompt_subst
 autoload -U colors && colors
 

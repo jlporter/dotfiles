@@ -27,17 +27,17 @@ done;
 
 vim +BundleInstall +qall
 
-ZSHRC_LOCAL="$HOME/.zshrc_local"
-if ! grep -q "GIT_AUTHOR_NAME" $ZSHRC_LOCAL; then
+RCLOCAL="$HOME/.bashrc_local"
+if ! grep -q "GIT_AUTHOR_NAME" $RCLOCAL; then
   echo "Git setup"
   echo -n "Enter name: "
   read name
   echo -n "Enter email: "
   read email
-  touch $ZSHRC_LOCAL
-  echo "export GIT_AUTHOR_NAME=\"$name\"" >> $ZSHRC_LOCAL
-  echo "export GIT_COMMITTER_NAME=\$GIT_AUTHOR_NAME" >> $ZSHRC_LOCAL
-  echo "export EMAIL=\"$email\"" >> $ZSHRC_LOCAL
-  echo "export GIT_AUTHOR_EMAIL=\$EMAIL" >> $ZSHRC_LOCAL
-  echo "export GIT_COMMITTER_EMAIL=\$EMAIL" >> $ZSHRC_LOCAL
+  touch $RCLOCAL
+  echo "export GIT_AUTHOR_NAME=\"$name\"" >> $RCLOCAL
+  echo "export GIT_COMMITTER_NAME=\$GIT_AUTHOR_NAME" >> $RCLOCAL
+  echo "export EMAIL=\"$email\"" >> $RCLOCAL
+  echo "export GIT_AUTHOR_EMAIL=\$EMAIL" >> $RCLOCAL
+  echo "export GIT_COMMITTER_EMAIL=\$EMAIL" >> $RCLOCAL
 fi

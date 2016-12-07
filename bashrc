@@ -8,3 +8,7 @@ export PS1="\n$CYAN\u$RESET@$YELLOW\h $GREEN\w$RED\n♥$RESET "
 
 # Enable colorized ls output on mac.
 export CLICOLOR=1
+
+if [ -f ~/.bashrc_local ]; then
+  . ~/.bashrc_local
+fi

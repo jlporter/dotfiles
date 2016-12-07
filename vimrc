@@ -47,9 +47,6 @@ set colorcolumn=+1
 " Don't continue comment when hitting o.
 set formatoptions-=o
 
-" Set default window size.
-set lines=100 columns=86
-
 " Search for ctags file up the directory tree
 set tags=./tags;/
 

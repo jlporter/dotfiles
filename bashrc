@@ -15,6 +15,7 @@ export PS1="\n$CYAN\u$RESET@$YELLOW\h $GREEN\w$RED\n♥$RESET "
 # Enable colorized ls output on mac.
 export CLICOLOR=1
 
+<<<<<<< Updated upstream
 # Don't put duplicate lines in the history file, and erase existing duplicates.
 HISTCONTROL=ignoredups,erasedups
 
@@ -23,6 +24,12 @@ HISTSIZE=-1
 
 # Append to the history file, don't overwrite it.
 shopt -s histappend
+=======
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+>>>>>>> Stashed changes
 
 if [ -f ~/.bashrc_local ]; then
   . ~/.bashrc_local

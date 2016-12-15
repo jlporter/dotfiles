@@ -19,7 +19,7 @@ export CLICOLOR=1
 HISTCONTROL=ignoredups,erasedups
 
 # Save all commands in history.
-HISTSIZE=-1
+HISTSIZE=
 
 # Append to the history file, don't overwrite it.
 shopt -s histappend

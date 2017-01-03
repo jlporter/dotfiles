@@ -27,3 +27,5 @@ shopt -s histappend
 if [ -f ~/.bashrc_local ]; then
   . ~/.bashrc_local
 fi
+
+alias g="gvim --remote-tab"

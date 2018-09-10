@@ -37,7 +37,6 @@ set incsearch
 set ruler
 set ignorecase
 set smartcase
-set number
 set showmatch
 
 set textwidth=80

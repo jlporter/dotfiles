@@ -7,9 +7,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+Plugin 'preservim/nerdcommenter'
+Plugin 'preservim/nerdtree'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
@@ -41,7 +41,7 @@ set smartcase
 set showmatch
 
 set textwidth=80
-set colorcolumn=+1
+" set colorcolumn=+1
 
 " Don't continue comment when hitting o.
 set formatoptions-=o
@@ -105,3 +105,5 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 let g:VCSCommandDiff = 'vertical'
 
+" Disable bell.
+set belloff=all

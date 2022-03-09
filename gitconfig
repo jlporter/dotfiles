@@ -12,6 +12,8 @@
 	tool = gvimdiff
 [credential]
 	helper = cache
+	helper = 
+	helper = /usr/local/share/gcm-core/Release/git-credential-manager-core
 [push]
 	default = simple
 [diff]
@@ -22,3 +24,5 @@
 	cookiefile = /usr/local/google/home/jud/.gitcookies
 [pull]
 	rebase = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true

@@ -1,3 +1,6 @@
+[google]
+mail.default-rev = .
+presubmit.default-rev = .
 [ui]
 editor = vim
 merge = vimdiff

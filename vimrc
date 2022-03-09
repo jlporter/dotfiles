@@ -40,7 +40,7 @@ set ignorecase
 set smartcase
 set showmatch
 
-set textwidth=80
+" set textwidth=80
 " set colorcolumn=+1
 
 " Don't continue comment when hitting o.

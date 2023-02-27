@@ -27,6 +27,8 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # Append to the history file, don't overwrite it.
 shopt -s histappend
 
+export EDITOR=vim
+
 if [ -f ~/.bashrc_local ]; then
   . ~/.bashrc_local
 fi

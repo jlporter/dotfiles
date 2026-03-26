@@ -24,5 +24,5 @@ _darcs
 # My own ignore list.
 backup.*
 install.sh
-ocd.sh
+update.sh
 README

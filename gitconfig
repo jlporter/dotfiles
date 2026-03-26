@@ -10,10 +10,6 @@
 	ui = true
 [merge]
 	tool = gvimdiff
-[credential]
-	helper = cache
-	helper = 
-	helper = /usr/local/share/gcm-core/Release/git-credential-manager-core
 [push]
 	default = simple
 [diff]
@@ -24,5 +20,8 @@
 	cookiefile = /usr/local/google/home/jud/.gitcookies
 [pull]
 	rebase = true
+# Usee SSH when pulling from github. Because of 2fa, passwords over https are not supported.
+[url "git@github.com:"]
+     pushInsteadOf = "https://github.com/"
 [credential "https://dev.azure.com"]
 	useHttpPath = true

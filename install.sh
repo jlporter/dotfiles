@@ -1,9 +1,11 @@
 #!/bin/bash
+set -e # Exit on error
+set -u # Exit on unset variables
 
 # Initialize submodules
 git pull
 git submodule init
-git submodule update
+git submodule update --init --recursive
 
 # Uncomment to update submodules
 #git submodule foreach git pull origin master
@@ -12,17 +14,32 @@ git submodule update
 backup_dir=backup-$(date +"%Y-%m-%d_%Hh%Mm%Ss")
 mkdir -p $backup_dir;
 
-# for f in bashrc bash_profile gitconfig gvimrc hgrc tmux.conf vim vimrc zshrc; do
-#     new=$(pwd)/$f
-#     old=~/.$f
-# 
-#     # If file already exists, create a backup
-#     if [[ -e $old ]]; then
-#         mv $old $backup_dir;
-#     fi;
-# done;
+# Use a glob to find all files/dirs starting with 'dot-'
+for dotfile in dot-*; do
+  # Skip if no matches are found
+  [[ -e "$dotfile" ]] || continue
 
-stow --dotfiles .
+  # Strip 'dot-' prefix to get the target name (e.g., .bashrc)
+  target_name=".${dotfile#dot-}"
+  target_path="$HOME/$target_name"
+
+  if [[ -e "$target_path" || -L "$target_path" ]]; then
+    if [[ ! -L "$target_path" ]]; then
+      echo "Backing up real file: $target_name"
+      mkdir -p "$backup_dir"
+      mv "$target_path" "$backup_dir/"
+    else
+      echo "Removing existing symlink: $target_name"
+      rm "$target_path"
+    fi
+  fi
+
+done
+
+# Delete backup directory if it's empty
+rmdir "$backup_dir" 2>/dev/null
+
+stow --dotfiles --target="$HOME" .
 
 vim +BundleInstall +qall
 

@@ -1,6 +1,6 @@
 .netrwhist
 backup-*
-vim/after
-vim/bundle
-vim/cache
-vim/data
+dot-vim/after
+dot-vim/bundle
+dot-vim/cache
+dot-vim/data

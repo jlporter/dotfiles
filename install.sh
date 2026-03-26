@@ -22,7 +22,8 @@ for f in bashrc bash_profile gitconfig gvimrc hgrc tmux.conf vim vimrc zshrc; do
     fi;
 
     # Create the symlink
-    ln -sf $new $old;
+    # ln -sf $new $old;
+    stow $f
 done;
 
 vim +BundleInstall +qall

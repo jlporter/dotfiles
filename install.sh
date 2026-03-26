@@ -12,19 +12,17 @@ git submodule update
 backup_dir=backup-$(date +"%Y-%m-%d_%Hh%Mm%Ss")
 mkdir -p $backup_dir;
 
-for f in bashrc bash_profile gitconfig gvimrc hgrc tmux.conf vim vimrc zshrc; do
-    new=$(pwd)/$f
-    old=~/.$f
+# for f in bashrc bash_profile gitconfig gvimrc hgrc tmux.conf vim vimrc zshrc; do
+#     new=$(pwd)/$f
+#     old=~/.$f
+# 
+#     # If file already exists, create a backup
+#     if [[ -e $old ]]; then
+#         mv $old $backup_dir;
+#     fi;
+# done;
 
-    # If file already exists, create a backup
-    if [[ -e $old ]]; then
-        mv $old $backup_dir;
-    fi;
-
-    # Create the symlink
-    # ln -sf $new $old;
-    stow $f
-done;
+stow --dotfiles .
 
 vim +BundleInstall +qall
 
